@@ -1,0 +1,40 @@
+private static String[] Header = {"Driver Name","Location","Team","Points","Races Participated"};
+    private DefaultTableModel tableModel = new DefaultTableModel(null,Header);
+    private JTable table = new JTable(tableModel);
+    private JScrollPane scrollP = new JScrollPane(table);
+    private JScrollBar scrollB = scrollP.getVerticalScrollBar();
+    private boolean IsAutoScroll;
+    private static JFrame f = new JFrame();
+	
+	
+	this.setLayout(new BorderLayout());
+        scrollP.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollB.addAdjustmentListener(new AdjustmentListener(){
+            @Override
+            public void adjustmentValueChanged(AdjustmentEvent e) {
+                IsAutoScroll = !e.getValueIsAdjusting();
+            }
+        });
+        this.add(scrollP,BorderLayout.CENTER);
+        JPanel panel = new JPanel();
+        this.add(panel, BorderLayout.SOUTH);
+		
+		
+	
+	
+	        JFrame f = new JFrame();
+        f.setSize(550,350);
+        f.add(new JScrollPane());
+        f.setVisible(true);
+        
+	public static void main(String[] argv) throws Exception{
+        ArrayList<Formula1Driver> DriverList = new ArrayList();
+        Formula1ChampionshipManager DriverStats = new Formula1ChampionshipManager();
+        
+        DriverList = DriverStats.GetDriverList();
+
+        JPanel panel = new JPanel();
+        //this.setLayout(new BorderLayout());
+        //this.add(scrollPane, BorderLayout.CENTER);
+
+    }
